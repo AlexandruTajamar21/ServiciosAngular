@@ -1,0 +1,31 @@
+<div>
+    <div>
+        <form class="form-group">
+            <label>Introduce el salario:</label><br>
+            <input type="number" class="form-control" name="cajasalario" #cajasalario><br>
+            <button (click)="mostrarEmpleados()">Mostrar Empleados</button>
+        </form>
+    </div>
+    <div>
+        <table class="table">
+            <thead class="table table-dark">
+                <tr>
+                    <th>idEmpleado</th>
+                    <th>apellido</th>
+                    <th>oficio</th>
+                    <th>salario</th>
+                    <th>departamento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let empleado of empleados">
+                    <td>{{empleado.idEmpleado}}</td>
+                    <td>{{empleado.apellido}}</td>
+                    <td>{{empleado.oficio}}</td>
+                    <td>{{empleado.salario}}</td>
+                    <td>{{empleado.departamento}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

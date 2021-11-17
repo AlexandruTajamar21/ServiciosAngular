@@ -1,0 +1,8 @@
+<h1>Comics por Inyeccion</h1>
+<div *ngFor="let comic of comics">
+    <hr>
+    <h1>{{comic.nombre}}</h1>
+    <img src="{{comic.imagen}}" style="width: 200px; height: 300px;"/>
+    <h2>{{comic.descripcion}}</h2>
+    <hr>
+</div>

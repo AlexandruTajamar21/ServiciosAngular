@@ -1,0 +1,9 @@
+<div>
+    <h1>Listado de Empleados</h1>
+    <div *ngIf="empleados"> 
+        <ul class="list-group">
+            <li *ngFor="let empleado of empleados"> {{empleado.apellido}} <a [routerLink]="['/detalleempleado', empleado.idEmpleado]" class="btn btn-outline-info"> Detalles</a></li>
+        </ul>
+    </div>
+    
+</div>

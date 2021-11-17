@@ -1,0 +1,21 @@
+<div>
+    <h1>Tienda de Comics</h1>
+
+    <form #comicForm="ngForm">
+        <label>Nombre:</label><br>
+        <input type="text" #cajanombre="ngModel" name="cajanombre" [(ngModel)]="comicNuevo.nombre"/><br>
+        <label>Imagen:</label><br>
+        <input type="text" #cajaimagen="ngModel" name="cajaimagen" [(ngModel)]="comicNuevo.imagen"/><br>
+        <label>Descripcion:</label><br>
+        <input type="text" #cajadescripcion="ngModel" name="cajadescripcion" [(ngModel)]="comicNuevo.descripcion"/>
+    </form>
+    <br><br>
+
+    <h1 *ngIf="favorito!=null">Comic favorito: {{favorito.nombre}}</h1>
+
+    <button (click)="nuevoComic()">Nuevo Comic</button>
+    <button (click)="eliminar1Comic()">EliminarComic</button>
+    <div *ngFor="let comic of comics">
+        <app-comichijo [comic]="comic" (seleccionarFavorito)="seleccionarFavorito($event)" (eliminarComic)="eliminarComic($event)" (modificarComic)="modificarComic($event)"></app-comichijo>
+    </div>
+</div>
